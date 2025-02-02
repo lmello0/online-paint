@@ -1,5 +1,5 @@
 <div class="flex min-h-screen items-center justify-center">
-  <app-color-picker></app-color-picker>
-  <app-toolbar></app-toolbar>
-  <app-canvas></app-canvas>
+  <app-color-picker (colorEventEmitter)="setColor($event)"></app-color-picker>
+  <app-toolbar (toolEventEmitter)="setTool($event)"></app-toolbar>
+  <app-canvas [tool]="this.tool" [color]="this.color"></app-canvas>
 </div>

@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-canvas',
@@ -12,6 +18,9 @@ export class CanvasComponent implements AfterViewInit {
   @ViewChild('canvas', { static: false })
   canvas!: ElementRef<HTMLCanvasElement>;
   private canvasCtx!: CanvasRenderingContext2D | null;
+
+  @Input() tool: string = '';
+  @Input() color: string = '#000000';
 
   ngAfterViewInit(): void {
     if (this.canvas) {
@@ -32,7 +41,7 @@ export class CanvasComponent implements AfterViewInit {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    this.canvasCtx.fillStyle = '#000000';
+    this.canvasCtx.fillStyle = this.color;
 
     this.canvasCtx.beginPath();
     this.canvasCtx.arc(x, y, 5, 0, Math.PI * 2);

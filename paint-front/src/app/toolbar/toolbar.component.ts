@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HoverClassDirective } from '../directives/hover-class/hover-class.directive';
 import { NgClass } from '@angular/common';
 
@@ -9,6 +9,8 @@ import { NgClass } from '@angular/common';
   styleUrl: './toolbar.component.css',
 })
 export class ToolbarComponent {
+  @Output() toolEventEmitter = new EventEmitter<string>();
+
   selectedTool: string = '';
   selectedToolDiv!: HTMLElement;
 
@@ -27,5 +29,7 @@ export class ToolbarComponent {
     this.selectedToolDiv = event.target as HTMLElement;
     this.selectedTool = this.selectedToolDiv.id;
     selectedToolClasses.forEach((c) => this.selectedToolDiv.classList.add(c));
+
+    this.toolEventEmitter.emit(this.selectedTool);
   }
 }

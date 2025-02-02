@@ -1,4 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { HoverClassDirective } from '../directives/hover-class/hover-class.directive';
 
 @Component({
@@ -17,6 +23,8 @@ export class ColorPickerComponent {
 
   selectedColor: string = '';
   selectedColorDiv!: HTMLElement;
+
+  @Output() colorEventEmitter = new EventEmitter<string>();
 
   addOutline(): void {
     this.isHovered = true;
@@ -52,5 +60,6 @@ export class ColorPickerComponent {
     this.selectedColor = this.selectedColorDiv.id;
 
     this.selectedColorDiv.classList.add(selectedClassOutline);
+    this.colorEventEmitter.emit(this.selectedColor);
   }
 }
