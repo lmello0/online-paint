@@ -17,11 +17,9 @@ export class AppComponent {
 
   setTool(event: string) {
     this.tool = event;
-    console.log(this.tool);
   }
 
   setColor(event: string) {
     this.color = event;
-    console.log(this.color);
   }
 }

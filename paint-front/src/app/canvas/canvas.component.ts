@@ -22,6 +22,9 @@ export class CanvasComponent implements AfterViewInit {
   @Input() tool: string = '';
   @Input() color: string = '#000000';
 
+  lastX: number = 0;
+  lastY: number = 0;
+
   ngAfterViewInit(): void {
     if (this.canvas) {
       this.canvasCtx = this.canvas.nativeElement.getContext('2d');
@@ -29,7 +32,17 @@ export class CanvasComponent implements AfterViewInit {
   }
 
   shouldDraw(event: MouseEvent) {
-    if (event.button === 0) this.isDrawing = true;
+    if (event.button !== 0) return;
+    if (!this.canvasCtx) return;
+
+    this.isDrawing = true;
+
+    const rect = this.canvas.nativeElement.getBoundingClientRect();
+    this.lastX = event.clientX - rect.left;
+    this.lastY = event.clientY - rect.top;
+
+    this.canvasCtx.beginPath();
+    this.canvasCtx.moveTo(this.lastX, this.lastY);
   }
 
   draw(event: MouseEvent) {
@@ -41,10 +54,15 @@ export class CanvasComponent implements AfterViewInit {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    this.canvasCtx.fillStyle = this.color;
+    this.canvasCtx.strokeStyle = this.color;
+    this.canvasCtx.lineWidth = 5; // TODO: implement brush size
+    this.canvasCtx.lineCap = 'round';
+    this.canvasCtx.lineJoin = 'round';
 
-    this.canvasCtx.beginPath();
-    this.canvasCtx.arc(x, y, 5, 0, Math.PI * 2);
-    this.canvasCtx.fill();
+    this.canvasCtx.lineTo(x, y);
+    this.canvasCtx.stroke();
+
+    this.lastX = x;
+    this.lastY = y;
   }
 }
