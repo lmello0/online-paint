@@ -10,5 +10,5 @@ import { CanvasComponent } from './canvas/canvas.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'paint-front';
+  title = 'online-paint';
 }
