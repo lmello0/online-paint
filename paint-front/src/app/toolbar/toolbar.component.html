@@ -28,5 +28,19 @@
         class="fa-solid fa-fill-drip w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
       ></div>
     </div>
+    <div class="tool-container grid grid-cols-2 gap-1">
+      <div
+        (click)="selectTool($event)"
+        id="circle"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-regular fa-circle w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+      <div
+        (click)="selectTool($event)"
+        id="square"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-regular fa-square w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+    </div>
   </div>
 </div>
