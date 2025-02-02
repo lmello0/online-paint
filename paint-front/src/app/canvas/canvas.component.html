@@ -1,0 +1,10 @@
+<canvas
+  #canvas
+  width="800"
+  height="600"
+  class="border-2 border-black bg-white"
+  (mousedown)="shouldDraw($event)"
+  (mouseup)="isDrawing = false"
+  (mouseout)="isDrawing = false"
+  (mousemove)="draw($event)"
+></canvas>
