@@ -1,0 +1,32 @@
+<div class="flex items-center">
+  <div class="toolbar flex w-full flex-col justify-around gap-1 p-1">
+    <div class="tool-container grid grid-cols-2 gap-1">
+      <div
+        (click)="selectTool($event)"
+        id="pencil"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-solid fa-pencil w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+      <div
+        (click)="selectTool($event)"
+        id="eraser"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-solid fa-eraser w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+    </div>
+    <div class="tool-container grid grid-cols-2 gap-1">
+      <div
+        (click)="selectTool($event)"
+        id="eye-dropper"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-solid fa-eye-dropper w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+      <div
+        (click)="selectTool($event)"
+        id="fill-drip"
+        hover-class="outline-2 outline-yellow-300"
+        class="fa-solid fa-fill-drip w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
+      ></div>
+    </div>
+  </div>
+</div>
