@@ -1,0 +1,217 @@
+<div class="flex flex-row items-center shadow-[2px_2px_black]">
+  <div class="color-picker flex w-full justify-around gap-1 p-1">
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#000000"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-black p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#ffffff"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-white p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#101828"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-gray-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#4a5565"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-gray-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#82181a"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-red-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#e7000b"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-red-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#7e2a0c"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-orange-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#f54a00"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-orange-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#7b3306"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-amber-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#e17100"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-amber-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#733e0a"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-yellow-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#d08700"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-yellow-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#35530e"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-lime-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#5ea500"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-lime-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#0d542b"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-green-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#00a63e"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-green-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#104e64"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-cyan-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#0092b8"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-cyan-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#1c398e"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-blue-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#155dfc"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-blue-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#4d179a"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-violet-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#7f22fe"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-violet-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#721378"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-fuchsia-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#c800de"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-fuchsia-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#861043"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-pink-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#e60076"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-pink-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        (click)="selectColor($event)"
+        id="#8b0836"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-rose-900 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+      <div
+        (click)="selectColor($event)"
+        id="#ec003f"
+        hover-class="outline-2 outline-yellow-300"
+        class="w-full cursor-pointer bg-rose-600 p-4 text-center shadow-[2px_2px_black_inset]"
+      ></div>
+    </div>
+    <!-- <div class="color-container grid grid-cols-1 gap-1">
+      <div
+        #customColorDiv
+        (click)="selectColor($event)"
+        hover-class="outline-2 outline-yellow-300"
+        class="rainbow flex w-12 cursor-pointer items-center justify-center shadow-[2px_2px_black_inset]"
+      >
+        <input
+          #customColorInput
+          type="color"
+          value="#fd1d1d"
+          class="h-full w-full opacity-0"
+          (click)="onColorPickerClick()"
+          (input)="updateColor()"
+        />
+      </div>
+    </div> -->
+  </div>
+</div>
