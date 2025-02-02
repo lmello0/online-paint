@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
 import { HoverClassDirective } from '../directives/hover-class/hover-class.directive';
 import { NgClass } from '@angular/common';
 
@@ -8,11 +8,15 @@ import { NgClass } from '@angular/common';
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css',
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements AfterViewInit {
   @Output() toolEventEmitter = new EventEmitter<string>();
 
   selectedTool: string = '';
   selectedToolDiv!: HTMLElement;
+
+  ngAfterViewInit(): void {
+    document.getElementById('pencil')?.click();
+  }
 
   selectTool(event: Event) {
     const selectedToolClasses = [
