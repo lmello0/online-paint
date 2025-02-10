@@ -1,6 +1,6 @@
 import { Color } from '../interface/color';
 
-export const COLOR_PALETTE: Array<Color> = [
+export const COLOR_PALETTE: Color[] = [
   { hexCode: '#000000', backgroundColorClass: 'bg-black' },
   { hexCode: '#101828', backgroundColorClass: 'bg-gray-900' },
   { hexCode: '#7e2a0c', backgroundColorClass: 'bg-orange-900' },

@@ -2,17 +2,15 @@
   class="grid h-full grid-flow-row grid-cols-[1fr_10fr] grid-rows-[6fr_1fr] items-stretch justify-items-stretch gap-x-[10px] gap-y-[10px]"
 >
   <div
-    class="row-1 row-2 col-1 col-2 col-0 col-0 flex items-center justify-center border-2 border-red-600"
+    class="row-1 row-2 col-1 col-2 col-0 col-0 flex items-center justify-center"
   >
     <app-toolbar
       class="inline-block"
       (toolEventEmitter)="setTool($event)"
     ></app-toolbar>
   </div>
-  <div
-    class="row-1 row-2 col-2 col-3 flex items-center justify-center border-2 border-red-600"
-  >
-    <div #canvasContainer class="h-full w-full border border-blue-600">
+  <div class="row-1 row-2 col-2 col-3 flex items-center justify-center">
+    <div #canvasContainer class="h-full w-full">
       <app-canvas
         [width]="width"
         [height]="height"

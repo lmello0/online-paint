@@ -39,8 +39,6 @@ export class ColorPickerComponent {
   }
 
   selectColor(event: Event, color: Color) {
-    console.log(this.colorPalette.length);
-
     const selectedClassOutline = 'selected';
 
     this.selectedColorDiv?.classList.remove(selectedClassOutline);
