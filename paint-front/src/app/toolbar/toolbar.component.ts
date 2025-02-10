@@ -1,10 +1,8 @@
 import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
-import { HoverClassDirective } from '../directives/hover-class/hover-class.directive';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-toolbar',
-  imports: [HoverClassDirective],
+  imports: [],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css',
 })
