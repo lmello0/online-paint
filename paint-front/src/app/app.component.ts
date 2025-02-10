@@ -18,8 +18,8 @@ import { CurrentColorComponent } from './current-color/current-color.component';
 export class AppComponent {
   title = 'online-paint';
 
-  tool: string = '';
-  color: string = '';
+  tool: string = 'pen';
+  color: string = '#000000';
 
   setTool(event: string) {
     this.tool = event;
