@@ -13,13 +13,16 @@ import {
   styleUrl: './canvas.component.css',
 })
 export class CanvasComponent implements AfterViewInit {
+  @Input() width: number = 0;
+  @Input() height: number = 0;
+
   isDrawing: boolean = false;
 
   @ViewChild('canvas', { static: false })
   canvas!: ElementRef<HTMLCanvasElement>;
   private canvasCtx!: CanvasRenderingContext2D | null;
 
-  @Input() tool: string = '';
+  @Input() tool: string = 'pencil';
   @Input() color: string = '#000000';
 
   lastX: number = 0;
