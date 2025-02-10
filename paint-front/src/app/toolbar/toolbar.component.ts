@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { TOOLBELT } from './constants/toolbelt';
+import { Tool } from './interfaces/tool';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,32 +8,37 @@ import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css',
 })
-export class ToolbarComponent implements AfterViewInit {
+export class ToolbarComponent {
+  readonly toolbelt = TOOLBELT;
+  readonly COL_QUANTITY = 2;
+
   @Output() toolEventEmitter = new EventEmitter<string>();
 
-  selectedTool: string = '';
-  selectedToolDiv!: HTMLElement;
+  selectedTool: string = 'pencil';
+  private selectedToolDiv!: HTMLElement;
 
-  ngAfterViewInit(): void {
-    document.getElementById('pencil')?.click();
+  selectTool(event: Event, tool: Tool): void {
+    const selectedElement = event.target as HTMLElement;
+
+    if (!selectedElement || selectedElement === this.selectedToolDiv) return;
+
+    this.updateToolSelection(selectedElement);
+    this.selectedTool = tool.toolName;
+    this.toolEventEmitter.emit(this.selectedTool);
   }
 
-  selectTool(event: Event) {
+  private updateToolSelection(newSelection: HTMLElement): void {
     const selectedToolClasses = [
       'selected',
       'shadow-[2px_2px_black_inset,2px_2px_white]',
     ];
 
-    if (this.selectedToolDiv !== undefined) {
-      selectedToolClasses.forEach((c) =>
-        this.selectedToolDiv.classList.remove(c),
-      );
-    }
+    this.selectedToolDiv?.classList.remove(...selectedToolClasses);
+    this.selectedToolDiv?.classList.add(
+      'shadow-[2px_2px_black_inset,2px_2px_white]',
+    );
 
-    this.selectedToolDiv = event.target as HTMLElement;
-    this.selectedTool = this.selectedToolDiv.id;
-    selectedToolClasses.forEach((c) => this.selectedToolDiv.classList.add(c));
-
-    this.toolEventEmitter.emit(this.selectedTool);
+    newSelection.classList.add(...selectedToolClasses);
+    this.selectedToolDiv = newSelection;
   }
 }

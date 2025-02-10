@@ -1,46 +1,14 @@
-<div class="flex items-center">
-  <div class="toolbar flex w-full flex-col justify-around gap-1 p-1">
-    <div class="tool-container grid grid-cols-2 gap-1">
-      <div
-        (click)="selectTool($event)"
-        id="pencil"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-solid fa-pencil w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-      <div
-        (click)="selectTool($event)"
-        id="eraser"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-solid fa-eraser w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-    </div>
-    <div class="tool-container grid grid-cols-2 gap-1">
-      <div
-        (click)="selectTool($event)"
-        id="eye-dropper"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-solid fa-eye-dropper w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-      <div
-        (click)="selectTool($event)"
-        id="fill-drip"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-solid fa-fill-drip w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-    </div>
-    <div class="tool-container grid grid-cols-2 gap-1">
-      <div
-        (click)="selectTool($event)"
-        id="circle"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-regular fa-circle w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-      <div
-        (click)="selectTool($event)"
-        id="square"
-        hover-class="outline-2 outline-yellow-300"
-        class="fa-regular fa-square w-full cursor-pointer p-3 text-center shadow-[-2px_-2px_black_inset,-2px_-2px_white]"
-      ></div>
-    </div>
-  </div>
+<div
+  class="border-ms-paint-border grid-rows-{{
+    this.toolbelt.length / this.COL_QUANTITY
+  }} grid grid-cols-2 gap-1 border-2 p-2 shadow-[-2px_-2px_white,2px_2px_black] flex-wrap"
+>
+  @for (tool of toolbelt; track $index) {
+    <div
+      (click)="selectTool($event, tool)"
+      class="{{
+        tool.classIcon
+      }} w-full cursor-pointer p-4 text-center shadow-[2px_2px_black_inset,2px_2px_white] hover:outline-2 hover:outline-yellow-300"
+    ></div>
+  }
 </div>
