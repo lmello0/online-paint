@@ -5,16 +5,18 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { HoverClassDirective } from '../directives/hover-class/hover-class.directive';
+import { COLOR_PALETTE } from './constants/color-palette';
+import { Color } from './interface/color';
 
 @Component({
   selector: 'app-color-picker',
-  imports: [HoverClassDirective],
+  imports: [],
   templateUrl: './color-picker.component.html',
   styleUrl: './color-picker.component.css',
 })
 export class ColorPickerComponent {
-  isHovered: boolean = false;
+  readonly ROW_QUANTITY = 2;
+  colorPalette = COLOR_PALETTE;
 
   @ViewChild('customColorInput') customColorInput!: ElementRef;
   @ViewChild('customColorDiv') customColorDiv!: ElementRef;
@@ -22,42 +24,29 @@ export class ColorPickerComponent {
   colorPickerTouchedYet: boolean = false;
 
   selectedColor: string = '';
-  selectedColorDiv!: HTMLElement;
+  selectedColorDiv: HTMLElement | null = null;
 
   @Output() colorEventEmitter = new EventEmitter<string>();
 
-  addOutline(): void {
-    this.isHovered = true;
-  }
-
-  removeOutline(): void {
-    this.isHovered = false;
-  }
-
   updateColor(): void {
-    const currentColor: string = this.customColorInput.nativeElement.value;
+    const currentColor = this.customColorInput.nativeElement.value;
     this.customColorDiv.nativeElement.style.backgroundColor = currentColor;
   }
 
   onColorPickerClick() {
-    if (!this.colorPickerTouchedYet) {
-      this.colorPickerTouchedYet = true;
-    }
-
     this.customColorDiv.nativeElement.classList.remove('rainbow');
     this.updateColor();
   }
 
-  selectColor(event: Event) {
+  selectColor(event: Event, color: Color) {
+    console.log(this.colorPalette.length);
+
     const selectedClassOutline = 'selected';
 
-    if (this.selectedColorDiv !== undefined) {
-      this.selectedColorDiv.classList.remove(selectedClassOutline);
-    }
+    this.selectedColorDiv?.classList.remove(selectedClassOutline);
 
     this.selectedColorDiv = event.target as HTMLElement;
-
-    this.selectedColor = this.selectedColorDiv.id;
+    this.selectedColor = color.hexCode;
 
     this.selectedColorDiv.classList.add(selectedClassOutline);
     this.colorEventEmitter.emit(this.selectedColor);
