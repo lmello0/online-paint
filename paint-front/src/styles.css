@@ -4,6 +4,10 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@theme {
+  --color-ms-paint-border: #cdcdcd;
+}
+
 body {
   background-color: #bdbdbd;
   height: 100vh;
