@@ -1,5 +1,28 @@
-<div class="flex min-h-screen items-center justify-center">
-  <app-color-picker (colorEventEmitter)="setColor($event)"></app-color-picker>
-  <app-toolbar (toolEventEmitter)="setTool($event)"></app-toolbar>
-  <app-canvas [tool]="this.tool" [color]="this.color"></app-canvas>
+<div
+  class="grid h-full grid-flow-row grid-cols-[1fr_10fr] grid-rows-[6fr_1fr] items-stretch justify-items-stretch gap-x-[10px] gap-y-[10px]"
+>
+  <div
+    class="row-1 row-2 col-1 col-2 col-0 col-0 flex items-center justify-center border-2 border-red-600"
+  >
+    toolbar
+    <!-- <app-toolbar class="" (toolEventEmitter)="setTool($event)"></app-toolbar> -->
+  </div>
+  <div
+    class="row-1 row-2 col-2 col-3 flex items-center justify-center border-2 border-red-600"
+  >
+    canvas
+    <!-- <app-canvas [tool]="this.tool" [color]="this.color"></app-canvas> -->
+  </div>
+  <div
+    class="row-2 row-3 col-2 col-3 flex items-center justify-center border-2 border-red-600"
+  >
+  </div>
+  <div class="row-2 row-3 col-1 col-2 flex items-center justify-center">
+    <div class="flex h-full w-full items-center p-10">
+      <app-color-picker
+        class="inline-block"
+        (colorEventEmitter)="setColor($event)"
+      ></app-color-picker>
+    </div>
+  </div>
 </div>
